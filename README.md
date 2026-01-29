@@ -54,6 +54,3 @@ pentlo/
 └── vite.config.js
 ```
 
-## 📄 License
-
-MIT © Pentlo
