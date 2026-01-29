@@ -1,16 +1,59 @@
-# React + Vite
+# Pentlo — Coming Soon
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, production-ready Coming Soon page for **Pentlo** — the all-in-one coordination platform for events, scheduling, collaboration, and conferencing.
 
-Currently, two official plugins are available:
+![Pentlo Builder](public/pentlo-builder.svg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- 🌈 **Full-screen rainbow glow** — Animated conic gradient that pulses elegantly
+- 🎈 **Floating SVG animation** — Smooth up/down motion with Framer Motion
+- 📝 **Fade-in text** — Staggered animations for heading and tagline
+- 📱 **Fully responsive** — Scales perfectly on mobile, tablet, and desktop
+- ⚡ **Lightning fast** — Built with Vite for instant HMR
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Tech Stack
 
-## Expanding the ESLint configuration
+- **React** (Vite)
+- **Tailwind CSS v4**
+- **Framer Motion**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view it.
+
+## 🎨 Brand Colors
+
+| Color | Hex |
+|-------|-----|
+| Pentlo Purple | `#6B5CFF` |
+| Pentlo Blue | `#2FA4FF` |
+| Pentlo Green | `#2ED9A3` |
+| Pentlo Yellow | `#FFD84D` |
+| Pentlo Pink | `#FF4D9D` |
+
+## 📁 Project Structure
+
+```
+pentlo/
+├── public/
+│   └── pentlo-builder.svg    # Hero illustration
+├── src/
+│   ├── App.jsx               # Main Coming Soon page
+│   ├── index.css             # Tailwind + glow animations
+│   └── lib/utils.js          # Utility functions
+├── index.html
+└── vite.config.js
+```
+
+## 📄 License
+
+MIT © Pentlo
