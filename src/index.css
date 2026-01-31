@@ -77,11 +77,11 @@ body {
 
 @keyframes pentloPulse {
   0%, 100% {
-    opacity: 0.5;
+    opacity: 0.6;
     transform: scale(1.15);
   }
   50% {
-    opacity: 0.75;
+    opacity: .75;
     transform: scale(1.25);
   }
 }
@@ -118,4 +118,272 @@ body {
   .from-pentlo-purple { --tw-gradient-from: var(--color-pentlo-purple); }
   .via-pentlo-blue { --tw-gradient-via: var(--color-pentlo-blue); }
   .to-pentlo-green { --tw-gradient-to: var(--color-pentlo-green); }
+}
+
+/* ============================================
+   Early Access Form Component
+   ============================================ */
+
+.early-access-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: 2px;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(107, 92, 255, 0.15),
+    rgba(47, 164, 255, 0.1),
+    rgba(46, 217, 163, 0.15)
+  );
+}
+
+.early-access-glow {
+  position: absolute;
+  inset: -20px;
+  background: conic-gradient(
+    from 180deg,
+    rgba(107, 92, 255, 0.12),
+    rgba(47, 164, 255, 0.08),
+    rgba(46, 217, 163, 0.12),
+    rgba(255, 216, 77, 0.08),
+    rgba(255, 77, 157, 0.12),
+    rgba(107, 92, 255, 0.12)
+  );
+  border-radius: 32px;
+  filter: blur(40px);
+  opacity: 0.7;
+  z-index: -1;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+.early-access-content {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 22px;
+  padding: 2.5rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    0 1px 2px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.early-access-heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.early-access-subtext {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  opacity: 0.85;
+  margin: 0 0 1.75rem 0;
+  line-height: 1.5;
+}
+
+.early-access-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.early-access-input-wrapper {
+  position: relative;
+  border-radius: 12px;
+  padding: 2px;
+  background: rgba(229, 231, 235, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.early-access-input-wrapper.focused {
+  background: linear-gradient(
+    135deg,
+    rgba(107, 92, 255, 0.3),
+    rgba(47, 164, 255, 0.25),
+    rgba(46, 217, 163, 0.3)
+  );
+  box-shadow: 
+    0 0 20px rgba(107, 92, 255, 0.15),
+    0 0 40px rgba(47, 164, 255, 0.1);
+}
+
+.early-access-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.early-access-input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.early-access-cta {
+  position: relative;
+  width: 100%;
+  padding: 0.9375rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    var(--color-pentlo-purple),
+    var(--color-pentlo-blue)
+  );
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.early-access-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 20px rgba(107, 92, 255, 0.35),
+    0 2px 8px rgba(47, 164, 255, 0.2);
+}
+
+.early-access-cta:active {
+  transform: translateY(0);
+}
+
+.early-access-cta-text {
+  position: relative;
+  z-index: 2;
+}
+
+.early-access-cta-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-pentlo-blue),
+    var(--color-pentlo-green),
+    var(--color-pentlo-purple)
+  );
+  background-size: 200% 200%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+.early-access-cta:hover .early-access-cta-gradient {
+  opacity: 1;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.early-access-helper {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  opacity: 0.65;
+  margin: 0.75rem 0 0 0;
+  text-align: center;
+}
+
+/* Success State */
+.early-access-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 0;
+}
+
+.early-access-success-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-pentlo-green), var(--color-pentlo-blue));
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.early-access-success-message {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin: 0;
+}
+
+.early-access-reset-btn {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-pentlo-purple);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.early-access-reset-btn:hover {
+  background: rgba(107, 92, 255, 0.1);
+}
+
+/* Error State */
+.early-access-input-wrapper.error {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.early-access-error {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #EF4444;
+  margin: 0;
+  text-align: left;
+}
+
+/* Loading State */
+.early-access-cta.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.early-access-cta:disabled {
+  pointer-events: none;
+}
+
+.early-access-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
